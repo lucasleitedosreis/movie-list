@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { css } from "styled-components";
 
 export const MovieItemStyled = styled.div`
   display: flex;
@@ -6,18 +7,61 @@ export const MovieItemStyled = styled.div`
   align-items: center;
   gap: 15px;
 `;
+
+export const MovieContentAniamtion = styled.div`
+  transition: all 0.5s;
+  opacity: 0;
+
+  ${(props) =>
+    props.direction === "top" &&
+    css`
+      transform: translateY(100px);
+    `}
+  ${(props) =>
+    props.direction === "left" &&
+    css`
+      transform: translateX(-100px);
+    `}
+  ${(props) =>
+    props.direction === "bottom" &&
+    css`
+      transform: translateY(-100px);
+    `}
+  ${(props) =>
+    props.direction === "right" &&
+    css`
+      transform: translateX(100px);
+    `}
+`;
+
+export const MovieOverview = styled(MovieContentAniamtion)`
+  color: #fff;
+  font-size: 0.8em;
+  line-height: 1.4rem;
+`;
+export const MovieVoteContent = styled(MovieContentAniamtion)``;
+
 export const CardFlip = styled.div`
   position: relative;
   width: 250px;
   height: 373px;
   perspective: 700px;
 
+  &:hover {
+    ${MovieContentAniamtion} {
+      transform: translate(0px);
+      opacity: 1;
+      transition: all 0.65s;
+      transition-delay: 0.25s;
+    }
+  }
+
   .front {
     position: absolute;
     width: 250px;
     height: 373px;
     border-radius: 5px;
-    transition: 700ms;
+    transition: 0.8s;
     z-index: 1;
   }
   &&:hover .front {
@@ -35,12 +79,14 @@ export const CardFlip = styled.div`
     gap: 30px;
     padding: 1rem;
     border-radius: 5px;
-    transition: 700ms;
+    transition: 0.8s;
     transform: rotateY(-180deg);
     backface-visibility: hidden;
+    opacity: 0;
   }
   &&:hover .back {
     transform: rotateY(0deg);
+    opacity: 1;
   }
   img {
     display: block;
@@ -49,11 +95,6 @@ export const CardFlip = styled.div`
     border-radius: 5px;
     margin-bottom: 20px;
   }
-`;
-export const MovieOverview = styled.div`
-  color: #fff;
-  font-size: 0.8em;
-  line-height: 1.4rem;
 `;
 
 export const Title = styled.span`

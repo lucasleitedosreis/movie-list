@@ -1,12 +1,9 @@
+/* eslint-disable camelcase */
+import { number, string } from "prop-types";
 import React from "react";
-import {
-  CardFlip,
-  MovieItemStyled,
-  MovieOverview,
-  Title,
-} from "./MovieCardStyle";
 import { Link } from "react-router-dom";
 import { MovieVote } from "../CardContent/MovieVote";
+import { CardFlip, MovieItemStyled, MovieOverview, MovieVoteContent, Title } from "./MovieCardStyle";
 
 const image_path = "https://image.tmdb.org/t/p/w500";
 
@@ -21,14 +18,24 @@ const MovieCard = (props) => {
             <img src={`${image_path}${poster_path}`} alt={title} />
           </div>
           <div className="back">
-            <MovieVote vote={vote_average} />
-            <MovieOverview>{`${overview.substr(0, 175)} [...]`}</MovieOverview>
+            <MovieVoteContent direction="bottom">
+              <MovieVote vote={vote_average} />
+            </MovieVoteContent>
+            <MovieOverview direction="top">{`${overview.substr(0, 175)} [...]`} </MovieOverview>
           </div>
         </CardFlip>
       </Link>
       <Title>{title}</Title>
     </MovieItemStyled>
   );
+};
+
+MovieCard.propTypes = {
+  id: number.isRequired,
+  title: string.isRequired,
+  poster_path: string.isRequired,
+  vote_average: number.isRequired,
+  overview: string.isRequired,
 };
 
 export default MovieCard;

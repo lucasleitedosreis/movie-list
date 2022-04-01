@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React, { useEffect, useMemo, useState } from "react";
 import { useParams } from "react-router-dom";
 import MovieCard from "../../Components/MoviesCard/MovieCard";
@@ -17,10 +18,8 @@ const Home = () => {
   useEffect(() => {
     let url = "";
 
-    if (currentId === "populares")
-      url = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR&page=1`;
-    else if (currentId === "tendencias")
-      url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR&page=1`;
+    if (currentId === "populares") url = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR&page=1`;
+    else if (currentId === "tendencias") url = `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR&page=1`;
 
     if (url) {
       fetch(url)
@@ -29,7 +28,7 @@ const Home = () => {
     }
   }, [currentId]);
 
-  const title = useMemo(() => {
+  const pageTitle = useMemo(() => {
     if (currentId === "tendencias") return "Tendências";
 
     return "Populares";
@@ -37,19 +36,14 @@ const Home = () => {
 
   return (
     <>
-      <SideBar></SideBar>
+      <SideBar />
       <Title>
-        <div>{title}</div>
+        <div>{pageTitle}</div>
       </Title>
       <MovieListStyled>
         {movies.map((movie) => {
           const { id, title, poster_path, vote_average, overview } = movie;
-          return (
-            <MovieCard
-              key={id}
-              {...{ id, title, poster_path, vote_average, overview }}
-            />
-          );
+          return <MovieCard key={id} {...{ id, title, poster_path, vote_average, overview }} />;
         })}
       </MovieListStyled>
     </>

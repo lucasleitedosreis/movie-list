@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 import React from "react";
 import { Link, useParams } from "react-router-dom";
 import { Title } from "../Title/Title";
@@ -6,8 +7,7 @@ import { Container } from "./DetailsMovieStyle";
 const DetailsMovie = () => {
   const { id } = useParams();
   const [movies, setMovies] = React.useState({});
-  const image_path = "https://image.tmdb.org/t/p/w500";
-
+  const imagePath = "https://image.tmdb.org/t/p/w500";
   React.useEffect(() => {
     fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${process.env.REACT_APP_API_KEY}&language=pt-BR
       `)
@@ -18,7 +18,7 @@ const DetailsMovie = () => {
           id,
           title,
           sinopse: overview,
-          image: `${image_path}${poster_path}`,
+          image: `${imagePath}${poster_path}`,
           data: release_date,
         };
         setMovies(movie);
@@ -36,7 +36,9 @@ const DetailsMovie = () => {
         <span className="sinopse">{movies.sinopse}</span>
         <span className="date">Data Lançamento: {movies.data}</span>
         <Link to="/">
-          <button className="btn">Voltar</button>
+          <button className="btn" type="button">
+            Voltar
+          </button>
         </Link>
       </div>
     </Container>
