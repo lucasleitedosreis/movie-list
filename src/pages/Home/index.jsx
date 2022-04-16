@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import MovieCard from '../../Components/MoviesCard';
 import { Title } from '../../Components/Title';
 import { SearchBar } from '../../structure/search-bar';
+import { Header } from '../Header';
 import { HomeStyled, MovieListStyled } from './style';
 
 const Home = () => {
@@ -47,11 +48,12 @@ const Home = () => {
     if (currentId === 'lancamentos') {
       return 'Lançamentos';
     }
-    return 'Populares';
+    return null;
   }, [currentId]);
 
   return (
     <HomeStyled>
+      <Header />
       <SearchBar />
       <Title>
         <div>{pageTitle}</div>

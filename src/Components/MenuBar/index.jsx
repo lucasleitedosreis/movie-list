@@ -5,7 +5,7 @@ import { MenuLi, MenuUl } from './style';
 export function MenuBar() {
   return (
     <MenuUl>
-      <Link to='populares'>
+      <Link to='/populares'>
         <MenuLi>Populares</MenuLi>
       </Link>
 

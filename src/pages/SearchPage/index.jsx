@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import MovieCard from '../../Components/MoviesCard';
 import { Title } from '../../Components/Title';
 import { SearchBar } from '../../structure/search-bar';
+import { Header } from '../Header';
 import { MovieListStyled, SearchStyled } from './style';
 
 const SearchPage = () => {
@@ -27,6 +28,7 @@ const SearchPage = () => {
 
   return (
     <SearchStyled>
+      <Header />
       <SearchBar onChange={(value) => setSearchData(value)} />
       <Title>
         <div>{searchData}</div>
