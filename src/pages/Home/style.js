@@ -6,6 +6,7 @@ export const HomeStyled = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
   gap: 30px;
 `;
 

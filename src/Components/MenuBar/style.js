@@ -24,4 +24,10 @@ export const MenuLi = styled.div`
     color: #fff;
     border-bottom: solid 4px #fff;
   }
+  @media (max-width: 1023px) {
+    font-size: 1.5rem;
+  }
+  @media (max-width: 767px) {
+    font-size: 1rem;
+  }
 `;
