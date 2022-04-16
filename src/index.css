@@ -3,9 +3,25 @@
   padding: 0;
   box-sizing: border-box;
 }
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgb(204, 0, 0);
+  border-radius: 30px;
+}
+::-webkit-scrollbar-thumb {
+  background: #202020;
+  border-radius: 30px;
+}
 body {
-  font-family: "IBM Plex Mono", monospace;
-  background: #333;
+  width: 100%;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: url(./assets/img/spider-man-.jpg), #111;
+  background-blend-mode: difference;
+  background-repeat: no-repeat;
+  background-size: contain;
   color: #fff;
   padding: 2rem;
 }

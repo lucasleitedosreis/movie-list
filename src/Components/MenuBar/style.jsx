@@ -1,11 +1,13 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MenuUl = styled.div`
-  list-style: none;
+  width: 100%;
   display: flex;
   justify-content: center;
-  gap: 30px;
-  padding: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  list-style: none;
+  column-gap: 30px;
   z-index: 100;
   a {
     text-decoration: none;
@@ -13,14 +15,13 @@ export const MenuUl = styled.div`
   }
 `;
 export const MenuLi = styled.div`
-  background: #222;
+  font-size: 2rem;
+  color: #ffffffbe;
   text-decoration: none;
-  color: #fff;
-  padding: 20px;
-  border-radius: 5px;
   transition: all 0.3s ease-in-out;
+  border-bottom: solid 4px transparent;
   &&:hover {
-    background: #fff;
-    color: #222;
+    color: #fff;
+    border-bottom: solid 4px #fff;
   }
 `;

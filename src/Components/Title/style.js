@@ -1,11 +1,12 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+
 export const TitleStyled = styled.h1`
   text-align: center;
 
   > div {
-    font-size: 3rem;
+    font-size: 4rem;
     color: #fff;
-    margin-bottom: 2rem;
+    margin-top: 30px;
   }
   .text-details {
     font-size: 2rem;

@@ -1,5 +1,4 @@
-import styled from "styled-components";
-import { css } from "styled-components";
+import styled, { css } from 'styled-components';
 
 export const MovieItemStyled = styled.div`
   display: flex;
@@ -13,22 +12,22 @@ export const MovieContentAniamtion = styled.div`
   opacity: 0;
 
   ${(props) =>
-    props.direction === "top" &&
+    props.direction === 'top' &&
     css`
       transform: translateY(100px);
     `}
   ${(props) =>
-    props.direction === "left" &&
+    props.direction === 'left' &&
     css`
       transform: translateX(-100px);
     `}
   ${(props) =>
-    props.direction === "bottom" &&
+    props.direction === 'bottom' &&
     css`
       transform: translateY(-100px);
     `}
   ${(props) =>
-    props.direction === "right" &&
+    props.direction === 'right' &&
     css`
       transform: translateX(100px);
     `}
@@ -37,6 +36,7 @@ export const MovieContentAniamtion = styled.div`
 export const MovieOverview = styled(MovieContentAniamtion)`
   color: #fff;
   font-size: 0.8em;
+  font-weight: 500;
   line-height: 1.4rem;
 `;
 export const MovieVoteContent = styled(MovieContentAniamtion)``;
@@ -72,17 +72,16 @@ export const CardFlip = styled.div`
     position: absolute;
     width: 250px;
     height: 373px;
-    background: #000;
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
     padding: 1rem;
     border-radius: 5px;
-    transition: 0.8s;
     transform: rotateY(-180deg);
     backface-visibility: hidden;
     opacity: 0;
+    backdrop-filter: blur(5px) brightness(50%);
   }
   &&:hover .back {
     transform: rotateY(0deg);
