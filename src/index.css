@@ -16,9 +16,9 @@
 }
 body {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100%;
   font-family: 'Poppins', sans-serif;
-  background: url(./assets/img/spider-man-.jpg), #111;
+  background: url(./assets/img/spider-man-.jpg) center, #111;
   background-blend-mode: difference;
   background-repeat: no-repeat;
   background-size: cover;

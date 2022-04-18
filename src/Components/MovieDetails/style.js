@@ -2,30 +2,31 @@ import styled from 'styled-components';
 
 export const ContentBG = styled.div`
   width: 100vw;
-  height: 100vh;
   background: url(${(props) => props.bgImage}) center no-repeat;
   background-size: cover;
 `;
 export const Container = styled.div`
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 2rem;
   backdrop-filter: blur(10px) brightness(30%);
   -webkit-backdrop-filter: blur(5px);
 `;
 
 export const MoviePoster = styled.img`
   display: block;
-  max-width: 280px;
+  max-width: 250px;
   width: 100%;
-  margin: 1.5rem 0;
+  margin-bottom: 20px;
   border-radius: 0.8rem;
 
-  @media (max-width: 767px) {
-    width: 200px;
+  @media (max-width: 768px) {
+    width: 125px;
+    margin-bottom: 20px;
   }
 `;
 export const DetailsTitle = styled.h1`
@@ -44,7 +45,6 @@ export const DetailsTitle = styled.h1`
 export const Details = styled.div`
   display: flex;
   flex-direction: column;
-  margin-left: 3rem;
 `;
 
 export const Sinopse = styled.span`

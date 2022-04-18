@@ -26,21 +26,21 @@ const MovieDetails = () => {
       });
   }, [id]);
   return (
-    <Container>
-      <ContentBG bgImage={movies.bgImage}>
-        <Container>
-          <MoviePoster src={movies.image} alt={movies.title} />
-          <Details>
-            <DetailsTitle>{movies.title}</DetailsTitle>
-            <Sinopse>{movies.sinopse}</Sinopse>
-            <Date>Data Lançamento: {movies.data}</Date>
+    <ContentBG bgImage={movies.bgImage}>
+      <Container>
+        <MoviePoster src={movies.image} alt={movies.title} />
+        <Details>
+          <DetailsTitle>{movies.title}</DetailsTitle>
+          <Sinopse>{movies.sinopse}</Sinopse>
+          <Date>Data Lançamento: {movies.data}</Date>
+          <div>
             <Link to='/'>
               <Button>Voltar</Button>
             </Link>
-          </Details>
-        </Container>
-      </ContentBG>
-    </Container>
+          </div>
+        </Details>
+      </Container>
+    </ContentBG>
   );
 };
 
