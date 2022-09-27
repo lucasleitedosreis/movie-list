@@ -11,9 +11,10 @@
 
 <hr>
 <p>Página Inicial</p>
-
+<br>
 ![home](https://user-images.githubusercontent.com/86244795/192404541-e155b9f0-49f3-4db9-8914-56f6bcfa7214.png)
 
+<hr>
 <p>Detalhes do Filme</p>
-
+<br>
 ![sobre](https://user-images.githubusercontent.com/86244795/192404637-765c4172-2d36-4167-9b4a-87ea9552bfc9.png)
